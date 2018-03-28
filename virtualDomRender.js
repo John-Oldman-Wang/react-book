@@ -13,7 +13,7 @@ class Demo extends React.Component {
     }
     render(){
         console.log("component render")
-        return (<h1>hello react</h1>)
+        return (<h1>{function(){return 1}()}hello react</h1>)
     }
     componentDidMount(){
         console.log('component did mount')
@@ -27,8 +27,8 @@ var virtualDom = React.createElement(Demo,null)
 
 //挂载组件，也就是渲染视图 获得组件
 var demo = ReactDom.render(virtualDom,document.getElementById('main'))
-
-//设置三秒后销毁组件
+console.log(React)
+console.log(ReactDom)
 setTimeout(() => {
     ReactDom.unmountComponentAtNode(document.getElementById('main'))
 }, 3000);
